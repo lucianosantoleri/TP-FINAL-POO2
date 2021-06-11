@@ -20,7 +20,7 @@ class Ranking {
     	this.actualizarPromedio();
     }
     
-	private float actualizarPromedio() {
+	float actualizarPromedio() {
 		// el puntaje promedio sería el resultado de dividir la suma de todas las calificaciones
 		// por la cantidad de las mismas.
 		return this.puntajeTotal() / this.calificaciones.size() ;
@@ -34,9 +34,12 @@ class Ranking {
 		return puntajePromedio;
 	}
 	
-	private long puntajeTotal() {
+	float puntajeTotal() {
 		// retorna la suma de todos los puntajes de la lista calificaciones.
-	    return this.calificaciones.stream().count();
+		int total = 0;
+		for (int i = 0; i < this.calificaciones.size(); i++)
+			total = total + this.calificaciones.get(i);
+	    return total;
 	}
     
 }
