@@ -8,11 +8,11 @@ class Inquilino extends Usuario{
     private List<Reserva> reservasConfirmadas;
     
     List<Reserva> reservaEn(String ciudad){
-    	List<Reserva> reservas = new ArrayList<>();
-    	for (int i = 0; i < this.reservas; i++)
+    	List<Reserva> reservasEn = new ArrayList<>();
+    	for (int i = 0; i < this.reservas.size(); i++)
     		if (this.reservas.get(i).ciudad() == ciudad)
-    				reservas = reservas.add(this.reservas.get(i));
-    	return reservas;
+    			reservasEn.add(this.reservas.get(i));
+    	return reservasEn;
     		
     }
     

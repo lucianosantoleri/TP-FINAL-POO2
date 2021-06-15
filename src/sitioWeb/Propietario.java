@@ -12,15 +12,15 @@ class Propietario extends Usuario{
 
     int vecesAlquilado(Inmueble propiedad) {
     	int vecesAlquilado = 0;
-    	for (int i = 0; i < this.reservasAConfirmar; i++)
-    	    if (this.reservasAConfirmar.get(i) == propiedad)
+    	for (int i = 0; i < this.reservasAConfirmar.size(); i++)
+    	    if (this.reservasAConfirmar.get(i).getInmueble() == propiedad)
     	    	vecesAlquilado++;
     	return vecesAlquilado;
     }
     
     int totalAlquileres() {
     	int total = 0;
-    	for (int i = 0; i < this.reservasAConfirmar; i++)
+    	for (int i = 0; i < this.reservasAConfirmar.size(); i++)
     		total++;
     	return total;
     }
