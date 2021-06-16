@@ -28,6 +28,16 @@ class Inquilino extends Usuario{
 	List<Reserva> getReservasConfirmadas() {
 		return reservasConfirmadas;
 	}
+
+	public void pagarEquivalenteADosDias(Propietario propietario) {
+		
+	}
+
+	//Este metodo es cuando hay que cumplir con la politica de cancelacion gratuita
+	public void pagarEquivalenteADosDias(Propietario propietario) {
+		// Chequear como se puede realizar los pagos
+		
+	}
 	
 	
     

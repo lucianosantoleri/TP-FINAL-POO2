@@ -10,7 +10,6 @@ public abstract class Usuario {
     protected LocalDate fechaDeIngreso;
     private Ranking ranking;
     
-    
 	String getNombreCompleto() {
 		return nombreCompleto;
 	}
