@@ -20,10 +20,10 @@ class Ranking {
     	this.actualizarPromedio();
     }
     
-	float actualizarPromedio() {
+	void actualizarPromedio() {
 		// el puntaje promedio sería el resultado de dividir la suma de todas las calificaciones
 		// por la cantidad de las mismas.
-		return this.puntajeTotal() / this.calificaciones.size() ;
+		puntajePromedio = this.puntajeTotal() / this.calificaciones.size() ;
 	}
 
 	List<Integer> getCalificaciones() {

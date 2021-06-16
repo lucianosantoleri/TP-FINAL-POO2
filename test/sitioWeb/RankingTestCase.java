@@ -28,14 +28,16 @@ class RankingTestCase {
 	@Test
 	void testActualizarPromedio() {
 		// testea actualizarPromedio q es el promedio de todas las calificaciones
-		assertEquals(ranking.actualizarPromedio(), 3.25f, 0.0f );
+		ranking.actualizarPromedio();
+		assertEquals(ranking.getPuntajePromedio(), 3.25f, 0.0f );
 	}
 	
 	@Test 
 	void testActualizarAlAgregarUnPuntaje() {
 		// testea q tras ejecutarse puntuar el puntajePromedio se actualize correctamente 
 		ranking.puntuar(5);
-		assertEquals(ranking.actualizarPromedio(), 3.6f, 0.0f);
+		ranking.actualizarPromedio();
+		assertEquals(ranking.getPuntajePromedio(), 3.6f, 0.0f);
 	}
 	
 

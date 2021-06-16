@@ -7,7 +7,7 @@ import sitioWeb.Administrador.Servicio;
 import sitioWeb.Administrador.TipoDeInmueble;
 
 class Inmueble {
- // private Usuario propietario;  // TODO falta definir usuario 
+    private Usuario propietario;  
     private TipoDeInmueble tipo; // los tipos los implementa el administrador del sitio
     private float superficie;
     private String pais;

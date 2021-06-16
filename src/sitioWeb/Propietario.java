@@ -40,7 +40,7 @@ class Propietario extends Usuario{
     	// TODO falta implementar Reserva
     }
     
-    void darInmuebleParaAlta(Inmueble nuevoInmueble) {
+    void inmuebleParaAlta(Inmueble nuevoInmueble) {
     	// TODO manda el alta de Sitio de un Inmueble que se quiere ofertar
     }
     
