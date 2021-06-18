@@ -1,15 +1,22 @@
 package sitioWeb;
 
 import java.time.LocalDate;
+import java.util.List;
 
 
 public abstract class Usuario {
-    private String nombreCompleto;
+	private ISitioWeb sitio;
+	private String nombreCompleto;
     private String eMail;
     private String telefono;
     protected LocalDate fechaDeIngreso;
     private Ranking ranking;
     private int dinero;
+    
+    
+    List<Inmueble> buscar(String ciudad, LocalDate entrada, LocalDate salida, int capacidad, int precioMin, int precioMax) {
+    	return this.sitio.buscar(ciudad, entrada, salida, capacidad, precioMin, precioMax);
+    }
     
 	String getNombreCompleto() {
 		return nombreCompleto;

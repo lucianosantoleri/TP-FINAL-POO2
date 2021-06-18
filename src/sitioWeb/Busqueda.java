@@ -4,14 +4,13 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-class Busqueda {
-	private ISitioWeb sitioWeb; 
+class Busqueda implements IBuscador{
 	private List<Inmueble> ResultadoDeBusqueda;
 	
 
-	List<Inmueble> buscar(String ciudad, LocalDate entrada, LocalDate salida, int capacidad, int precioMin, int precioMax) {
+	public List<Inmueble> buscar(String ciudad, LocalDate entrada, LocalDate salida, int capacidad, int precioMin, int precioMax, List<Inmueble> inmuebles) {
 		this.ResultadoDeBusqueda = new ArrayList<>();
-		List<Inmueble> inmueblesDisponibles = sitioWeb.getInmueblesOfertados();
+		List<Inmueble> inmueblesDisponibles = inmuebles;
 		this.buscarPorCiudad(ciudad, inmueblesDisponibles);
 		this.buscarPorFechaEntrada(entrada, ResultadoDeBusqueda);
 		this.buscarPorFechaSalida(salida, ResultadoDeBusqueda);

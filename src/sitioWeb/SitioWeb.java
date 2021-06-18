@@ -1,5 +1,6 @@
 package sitioWeb;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,6 +8,7 @@ public class SitioWeb implements ISitioWeb{
     private List<Usuario> usuarios;
     private List<Inmueble> inmueblesOfertados;
     private List<Inmueble> altasDelSitio;
+    private IBuscador buscador;
     
     public SitioWeb() {
     	usuarios = new ArrayList<>();
@@ -31,7 +33,11 @@ public class SitioWeb implements ISitioWeb{
 	void addInmueblesOfertados(Inmueble inmueble) {
 		this.inmueblesOfertados.add(inmueble);
 	}
-
+	
+	public List<Inmueble> buscar(String ciudad, LocalDate entrada, LocalDate salida, int capacidad, int precioMin, int precioMax) {
+    	return buscador.buscar(ciudad, entrada, salida, capacidad, precioMin, precioMax, this.getInmueblesOfertados());
+    }
+	
 	List<Usuario> getUsuarios() {
 		return usuarios;
 	}
@@ -43,7 +49,6 @@ public class SitioWeb implements ISitioWeb{
 	List<Inmueble> getInmueblesADarDeAlta() {
 		return altasDelSitio;
 	}
-	
 	
     
 }
