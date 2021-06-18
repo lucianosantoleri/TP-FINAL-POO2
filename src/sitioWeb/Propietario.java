@@ -10,7 +10,7 @@ class Propietario extends Usuario{
     private List<Reserva> reservasAConfirmar;
     private List<Reserva> reservasRealizadas;
 
-    int vecesAlquilado(Inmueble propiedad) {
+    public int vecesAlquilado(Inmueble propiedad) {
     	int vecesAlquilado = 0;
     	for (int i = 0; i < this.reservasAConfirmar.size(); i++)
     	    if (this.reservasAConfirmar.get(i).getInmueble() == propiedad)
@@ -18,29 +18,29 @@ class Propietario extends Usuario{
     	return vecesAlquilado;
     }
     
-    int totalAlquileres() {
+    public int totalAlquileres() {
     	int total = 0;
     	for (int i = 0; i < this.reservasAConfirmar.size(); i++)
     		total++;
     	return total;
     }
     
-    Period tiempoUsuario() {
+    public Period tiempoUsuario() {
     	LocalDate tiempoActual;
     	tiempoActual = LocalDate.now();
     	return Period.between(this.fechaDeIngreso, tiempoActual);
     }
     
-    void verUsuario(Usuario inquilino) {
+    public void verUsuario(Usuario inquilino) {
     	// TODO supongo q tiene q imprimir en pantalla los datos q se piden
     	// en cuanto a visualizacion
     }
     
-    void ConfirmarReserva(Reserva reserva) {
+    public void ConfirmarReserva(Reserva reserva) {
     	// TODO falta implementar Reserva
     }
     
-    void inmuebleParaAlta(Inmueble nuevoInmueble) {
+    public void inmuebleParaAlta(Inmueble nuevoInmueble) {
     	// TODO manda el alta de Sitio de un Inmueble que se quiere ofertar
     }
     

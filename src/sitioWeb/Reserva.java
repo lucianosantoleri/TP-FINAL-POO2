@@ -23,7 +23,12 @@ class Reserva {
     	this.setPoliticaCancelacion(politicaCancelacion);
     }
     
-    String ciudad() {
+    private void setPoliticaCancelacion(PoliticaDeCancelacion politicaCancelacion2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	String ciudad() {
     	return this.inmueble.getCiudad();
     }
     
@@ -67,8 +72,7 @@ class Reserva {
 	void setPoliticaCancelacion(PoliticaDeCancelacion politicaCancelacion) {
 		this.politicaCancelacion = politicaCancelacion;
 	}
-	
-	
+
 	boolean isEnEspera() {
 		return enEspera;
 	}

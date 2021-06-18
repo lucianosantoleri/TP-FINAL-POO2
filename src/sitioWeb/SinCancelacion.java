@@ -3,8 +3,7 @@ package sitioWeb;
 public class SinCancelacion implements PoliticaDeCancelacion {
 
 	@Override
-	public void cancelar() {
-		// TODO Auto-generated method stub
-		
+	public void cancelar(Inquilino inquilino, Propietario propietario) {
+		inquilino.pagar(dineroAPagar, propietario);
 	}
 }

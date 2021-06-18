@@ -9,7 +9,7 @@ public abstract class Usuario {
     private String telefono;
     protected LocalDate fechaDeIngreso;
     private Ranking ranking;
-    
+    private int dinero;
     
 	String getNombreCompleto() {
 		return nombreCompleto;
@@ -50,6 +50,16 @@ public abstract class Usuario {
 	void setRanking(Ranking ranking) {
 		this.ranking = ranking;
 	}
+
+	public int getDinero() {
+		return dinero;
+	}
+
+	public void setDinero(int dinero) {
+		this.dinero = dinero;
+	}
     
-    
+    public void pagar(int dineroAPagar, Usuario otroUsuario) {
+    	otroUsuario.dinero = dinero + dineroAPagar;
+    }
 }
