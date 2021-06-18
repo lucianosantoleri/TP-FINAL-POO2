@@ -1,5 +1,6 @@
 package sitioWeb;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import sitioWeb.Administrador.FormaDePago;
@@ -21,9 +22,10 @@ class Inmueble {
     private List<FormaDePago> formasDePago; // implementado en el administrador del sitio
     private float precio;
  // private PoliticaDeCancelacion politicaCancelacion; // TODO falta definir las 3 politicas de cancelacion
- // private disponibilidad ?????? no recuerdo a q tipo se refiere, si a fechas en las q está disponible o qué?
+    private List<LocalDate> disponibilidad;
     
-    private Ranking ranking;
+
+	private Ranking ranking;
     private List<String> comentarios;
     
 	
@@ -126,5 +128,18 @@ class Inmueble {
 		this.comentarios = comentarios;
 	}
 	
+	List<LocalDate> getDisponibilidad() {
+		return disponibilidad;
+	}
+	
+	// debería agregar una fecha disponible para reserva
+	void addFechaDisponible(LocalDate fecha) {
+		this.disponibilidad.add(fecha);
+	}
+	
+	// debería borrar una fecha disponible para reserva cuando esta se reserva.
+	void removeFechaDisponible(LocalDate fecha) {
+		this.disponibilidad.remove(fecha);
+	}
       
 }

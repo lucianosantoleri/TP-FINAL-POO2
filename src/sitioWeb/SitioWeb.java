@@ -3,7 +3,7 @@ package sitioWeb;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SitioWeb {
+public class SitioWeb implements ISitioWeb{
     private List<Usuario> usuarios;
     private List<Inmueble> inmueblesOfertados;
     private List<Inmueble> altasDelSitio;
@@ -36,12 +36,14 @@ public class SitioWeb {
 		return usuarios;
 	}
 
-	List<Inmueble> getInmueblesOfertados() {
-		return inmueblesOfertados;
+	public List<Inmueble> getInmueblesOfertados() {
+		return this.inmueblesOfertados;
 	}
 
 	List<Inmueble> getInmueblesADarDeAlta() {
 		return altasDelSitio;
 	}
+	
+	
     
 }

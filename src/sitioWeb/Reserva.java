@@ -7,7 +7,7 @@ class Reserva {
     private Inquilino inquilino;
     private Propietario propietario;
     private FormaDePago formaDePago;
- // private PoliticaDeCancelacion politicaCancelacion; // TODO falta implementar las politicas de cancelacion
+    private PoliticaDeCancelacion politicaCancelacion; // TODO falta implementar las politicas de cancelacion
     private boolean enEspera;
     
     public Reserva(Inmueble alquiler, Inquilino inquilino, Propietario propietario, FormaDePago formaPago, PoliticaDeCancelacion politicaCancelacion) {
@@ -59,7 +59,7 @@ class Reserva {
 		this.formaDePago = formaDePago;
 	}
 	
-	/*
+	
 	PoliticaDeCancelacion getPoliticaCancelacion() {
 		return politicaCancelacion;
 	}
@@ -67,7 +67,7 @@ class Reserva {
 	void setPoliticaCancelacion(PoliticaDeCancelacion politicaCancelacion) {
 		this.politicaCancelacion = politicaCancelacion;
 	}
-	*/
+	
 	
 	boolean isEnEspera() {
 		return enEspera;
