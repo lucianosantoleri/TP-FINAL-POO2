@@ -3,7 +3,7 @@ package sitioWeb;
 public class SinCancelacion implements PoliticaDeCancelacion {
 
 	@Override
-	public void cancelar(Inquilino inquilino, Propietario propietario) {
-		inquilino.pagar(dineroAPagar, propietario);
+	public void cancelar(Usuario usuario) {
+		usuario.setPago(Pago.TOTALIDAD);
 	}
 }

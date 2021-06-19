@@ -7,7 +7,7 @@ class Reserva {
     private Inquilino inquilino;
     private Propietario propietario;
     private FormaDePago formaDePago;
-    private PoliticaDeCancelacion politicaCancelacion; // TODO falta implementar las politicas de cancelacion
+    private PoliticaDeCancelacion politicaCancelacion;
     private boolean enEspera;
     
     public Reserva(Inmueble alquiler, Inquilino inquilino, Propietario propietario, FormaDePago formaPago, PoliticaDeCancelacion politicaCancelacion) {
@@ -22,11 +22,6 @@ class Reserva {
     	this.setFormaDePago(formaPago);
     	this.setPoliticaCancelacion(politicaCancelacion);
     }
-    
-    private void setPoliticaCancelacion(PoliticaDeCancelacion politicaCancelacion2) {
-		// TODO Auto-generated method stub
-		
-	}
 
 	String ciudad() {
     	return this.inmueble.getCiudad();

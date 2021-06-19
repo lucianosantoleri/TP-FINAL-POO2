@@ -3,13 +3,13 @@ package sitioWeb;
 public class CancelacionGratuita implements PoliticaDeCancelacion {
 
 	@Override
-	public void cancelar(Inquilino inquilino, Propietario propietario) {
-		if (!this.entraEnLapsoDeFechasCancelablesGratis(inquilino, propietario)) {
-			inquilino.pagarEquivalenteADosDias(propietario);
+	public void cancelar(Usuario usuario) {
+		if (!this.entraEnLapsoDeFechasCancelablesGratis(usuario)) {
+			usuario.setPago(Pago.DOSDIASRESERVA);
 		}
 	}
 
-	private boolean entraEnLapsoDeFechasCancelablesGratis(Inquilino inquilino, Propietario propietario) {
-		return inquilino.fechaDeIngreso.get(null) > 10;
+	private boolean entraEnLapsoDeFechasCancelablesGratis(Usuario usuario) {
+		return usuario.fechaDeIngreso.get(null) > 10;
 	}
 }
