@@ -32,21 +32,17 @@ class Propietario extends Usuario{
     }
     
     public void verUsuario(Usuario inquilino) {
-    	// TODO supongo q tiene q imprimir en pantalla los datos q se piden
+    	//supongo que tiene q imprimir en pantalla los datos q se piden
     	// en cuanto a visualizacion
     }
     
     public void ConfirmarReserva(Reserva reserva) {
-    	// TODO falta implementar Reserva
+    	this.reservasRealizadas.add(reserva);
     }
     
     public void inmuebleParaAlta(Inmueble nuevoInmueble) {
-    	// TODO manda el alta de Sitio de un Inmueble que se quiere ofertar
+    	// manda el alta de Sitio de un Inmueble que se quiere ofertar
     }
-    
-    
-    
-    
     
 	List<Inmueble> getInmueblesOfertados() {
 		return inmueblesOfertados;

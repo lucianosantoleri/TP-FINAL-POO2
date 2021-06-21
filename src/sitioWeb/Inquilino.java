@@ -18,7 +18,7 @@ class Inquilino extends Usuario{
     
     void CancelarReserva(Reserva reserva) {
     	this.reservas.remove(reserva);
-    	// TODO aca falta todo el tramite de la cancelacion (politicas, borrar la reserva del sistema u otras clases).
+    	reserva.getPoliticaCancelacion().cancelar(this);
     }
     
 	List<Reserva> getReservas() {
@@ -27,18 +27,5 @@ class Inquilino extends Usuario{
 	
 	List<Reserva> getReservasConfirmadas() {
 		return reservasConfirmadas;
-	}
-
-	public void pagarEquivalenteADosDias(Propietario propietario) {
-		
-	}
-
-	//Este metodo es cuando hay que cumplir con la politica de cancelacion gratuita
-	public void pagarEquivalenteADosDias(Propietario propietario) {
-		// Chequear como se puede realizar los pagos
-		
-	}
-	
-	
-    
+	}   
 }
