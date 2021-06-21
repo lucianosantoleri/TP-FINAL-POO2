@@ -19,6 +19,14 @@ public class CancelacionIntermedia implements PoliticaDeCancelacion {
 	}
 	
 	private boolean entraEnLapsoDeCincuentaPorCiento(Usuario usuario) {
-		return  19 > usuario.fechaDeIngreso.get(null) > 10;
+		return  this.comparandoConDiaMaximo(usuario) && this.comparandoConDiaMinimo(usuario);
+	}
+	
+	private boolean comparandoConDiaMaximo(Usuario usuario) {
+		return  19 > usuario.fechaDeIngreso.get(null);
+	}
+	
+	private boolean comparandoConDiaMinimo(Usuario usuario) {
+		return  usuario.fechaDeIngreso.get(null) > 10;
 	}
 }
