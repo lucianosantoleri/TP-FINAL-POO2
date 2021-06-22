@@ -8,7 +8,7 @@ import sitioWeb.Administrador.Servicio;
 import sitioWeb.Administrador.TipoDeInmueble;
 
 class Inmueble {
-    private Usuario propietario;  
+    private Propietario propietario;  
     private TipoDeInmueble tipo; // los tipos los implementa el administrador del sitio
     private float superficie;
     private String pais;
@@ -21,16 +21,20 @@ class Inmueble {
     private int checkOut;
     private List<FormaDePago> formasDePago; // implementado en el administrador del sitio
     private float precio;
- // private PoliticaDeCancelacion politicaCancelacion; // TODO falta definir las 3 politicas de cancelacion
+	private PoliticaDeCancelacion politicaCancelacion; 
+	private Ranking ranking;
+    private List<String> comentarios;
+	
+	
+	// TODO  ni idea  como implementarlo
     private List<LocalDate> disponibilidad;
     
 
-	private Ranking ranking;
-    private List<String> comentarios;
+	
     
 	
     public Inmueble() {
-    // TODO 	
+    // TODO armar constructor cuando tengamos todas las variables resueltas	
     }
     
     void agregarFormaDePago(FormaDePago pago) {
@@ -141,5 +145,38 @@ class Inmueble {
 	void removeFechaDisponible(LocalDate fecha) {
 		this.disponibilidad.remove(fecha);
 	}
+
+	Propietario getPropietario() {
+		return propietario;
+	}
+
+	public TipoDeInmueble getTipo() {
+		return tipo;
+	}
+	
+	List<Servicio> getServicios() {
+		return servicios;
+	}
+
+	List<FormaDePago> getFormasDePago() {
+		return formasDePago;
+	}
+	
+	PoliticaDeCancelacion getPoliticaCancelacion() {
+		return politicaCancelacion;
+	}
+
+	void setPoliticaCancelacion(PoliticaDeCancelacion politicaCancelacion) {
+		this.politicaCancelacion = politicaCancelacion;
+	}
+
+	void setServicios(List<Servicio> servicios) {
+		this.servicios = servicios;
+	}
+
+	void setFormasDePago(List<FormaDePago> formasDePago) {
+		this.formasDePago = formasDePago;
+	}
+
       
 }

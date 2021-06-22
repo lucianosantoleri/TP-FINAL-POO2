@@ -9,6 +9,8 @@ public class SitioWeb implements ISitioWeb{
     private List<Inmueble> inmueblesOfertados;
     private List<Inmueble> altasDelSitio;
     private IBuscador buscador;
+    private Visualizable visualizador;
+    
     
     public SitioWeb() {
     	usuarios = new ArrayList<>();
@@ -22,6 +24,15 @@ public class SitioWeb implements ISitioWeb{
     	this.addInmueblesOfertados(inmueble);
     }
     
+    // se encarga de recibir y mostrar la información correspondiente de un inmueble luego de su busqueda.
+    public void visualizar(Inmueble inmueble) {
+    	visualizador.visualizar(inmueble);
+    }
+    
+    public List<Inmueble> buscar(String ciudad, LocalDate entrada, LocalDate salida, int capacidad, int precioMin, int precioMax) {
+    	return buscador.buscar(ciudad, entrada, salida, capacidad, precioMin, precioMax, this.getInmueblesOfertados());
+    }
+    
     void registrarUsuario(Usuario usuario) {
     	this.usuarios.add(usuario);
     }
@@ -33,10 +44,6 @@ public class SitioWeb implements ISitioWeb{
 	void addInmueblesOfertados(Inmueble inmueble) {
 		this.inmueblesOfertados.add(inmueble);
 	}
-	
-	public List<Inmueble> buscar(String ciudad, LocalDate entrada, LocalDate salida, int capacidad, int precioMin, int precioMax) {
-    	return buscador.buscar(ciudad, entrada, salida, capacidad, precioMin, precioMax, this.getInmueblesOfertados());
-    }
 	
 	List<Usuario> getUsuarios() {
 		return usuarios;

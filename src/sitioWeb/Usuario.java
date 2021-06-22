@@ -17,6 +17,10 @@ public abstract class Usuario {
     	return this.sitio.buscar(ciudad, entrada, salida, capacidad, precioMin, precioMax);
     }
     
+    void visualizar(Inmueble inmueble) {
+    	sitio.visualizar(inmueble);
+    }
+    
 	String getNombreCompleto() {
 		return nombreCompleto;
 	}
